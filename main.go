@@ -60,18 +60,18 @@ func main() {
 			monthlySummary()
 		case "8":
 			saveData()
-			fmt.Println("Your data has been successfully stored.")
+			fmt.Println("Data saved successfully.")
 			return
 		default:
-			fmt.Println("Invalid option.")
+			fmt.Println("Invalid Input.")
 		}
 	}
 }
 
 func addTransaction(tType string, reader *bufio.Reader) {
 	amount := readAmount(reader)
-	category := readText(reader, "Category: ")
-	description := readText(reader, "Description: ")
+	category := readText(reader, "Category (Food , Travel): ")
+	description := readText(reader, "Description(Describe your Transcation): ")
  
 	t := Transaction{
 		ID:          nextID,
@@ -172,14 +172,14 @@ func editTransaction(reader *bufio.Reader) {
 				}
 			}
 
-			fmt.Print("New category: ")
+			fmt.Print("New category(Food , Travel): ")
 			text, _ = reader.ReadString('\n')
 			text = strings.TrimSpace(text)
 			if text != "" {
 				transactions[i].Category = text
 			}
 
-			fmt.Print("New description: ")
+			fmt.Print("New description(Describe your edited Transcations): ")
 			text, _ = reader.ReadString('\n')
 			text = strings.TrimSpace(text)
 			if text != "" {
@@ -187,7 +187,7 @@ func editTransaction(reader *bufio.Reader) {
 			}
 
 			saveData()
-			fmt.Println("Transaction updated.")
+			fmt.Println("Transaction updated successfully.")
 			return
 		}
 	}
@@ -264,7 +264,7 @@ func loadData() {
 
 	err = json.Unmarshal(data, &transactions)
 	if err != nil {
-		fmt.Println("Failed to load data.Retry again")
+		fmt.Println("Failed to load data.")
 		return
 	}
 
@@ -272,6 +272,3 @@ func loadData() {
 		if t.ID >= nextID {
 			nextID = t.ID + 1
 		}}}     
-
-	
-	
