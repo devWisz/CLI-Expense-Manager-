@@ -1,5 +1,6 @@
 package main
 
+
 import (
 	"bufio"
 	"encoding/json"
@@ -60,7 +61,7 @@ func main() {
 			monthlySummary()
 		case "8":
 			saveData()
-			fmt.Println("Data saved successfully.")
+			fmt.Println("Data saved successfully.\nDeveloped by Sarjak Khanal.")
 			return
 		default:
 			fmt.Println("Invalid Input.")
@@ -129,9 +130,9 @@ func showBalance() {
 	}
 
 	fmt.Println()
-	fmt.Println("Income :", income)
-	fmt.Println("Expense:", expense)
-	fmt.Println("Balance:", income-expense)
+	fmt.Println("Total Income :", income)
+	fmt.Println("Total Expense:", expense)
+	fmt.Println("Total Balance:", income-expense)
 }
 
 func listTransactions() {
@@ -203,7 +204,7 @@ func deleteTransaction(reader *bufio.Reader) {
 		if t.ID == id {
 			transactions = append(transactions[:i], transactions[i+1:]...)
 			saveData()
-			fmt.Println("Transaction deleted.")
+			fmt.Println("Transaction deleted successfully.")
 			return
 		}
 	}
