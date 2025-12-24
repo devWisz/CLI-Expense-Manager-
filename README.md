@@ -25,6 +25,8 @@ Features
 
 8. Data stored locally in budget.json
 
+   
+
 How to Run
 Prerequisites
 
@@ -39,6 +41,7 @@ git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>/src
 
 Make sure main.go is inside the src folder.
+
 
 Step 2: Build the binary
 
@@ -59,23 +62,25 @@ Step 3: Run the program
 
 The program will show a menu with options:
 
-Add income
+1.Add income
 
-Add expense
+2.Add expense
 
-View balance
+3.View balance
 
-List transactions
+4.List transactions
 
-Edit transaction
+5.Edit transaction
 
-Delete transaction
+6.Delete transaction
 
-Monthly summary
+7.Monthly summary
 
 Exit
 
 Enter the number corresponding to the action you want to perform.
+
+
 
 Step 4: Data Storage
 
