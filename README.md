@@ -1,41 +1,99 @@
 # CLI-Expense-Manager-
 
+CLI Expense Manager
+Overview
 
-A command-line application written in Go to track income and expenses, manage transactions, and generate monthly financial summaries using local JSON storage.
+CLI Expense Manager is a simple command-line application written in Go to track your personal finances. It allows you to record incomes and expenses, view your current balance, edit or delete transactions, and see monthly summaries. All data is stored locally in a JSON file (budget.json), so it works completely offline.
 
-Description
-
-This program allows users to record income and expense transactions from the terminal.
-All data is stored persistently in a JSON file, enabling simple personal finance tracking without external dependencies, databases, or UI frameworks.
-
-The focus is on clean logic, input validation, and reliability.
+This tool is lightweight, standalone, and portable, making it easy to manage your finances directly from your terminal or command prompt.
 
 Features
 
-Add income and expense transactions
+Add income transactions
 
-Edit existing transactions using unique IDs
+Add expense transactions
+
+View total balance
+
+List all transactions with details (ID, type, date, amount, category, description)
+
+Edit existing transactions
 
 Delete transactions
 
-View total income, total expenses, and current balance
+Monthly summary of income, expenses, and balance
 
-List all recorded transactions
+Data stored locally in budget.json
 
-Generate monthly income and expense summaries
+How to Run
+Prerequisites
 
-Automatic data persistence using a JSON file
+Install Go
+ (version 1.23.3 or higher)
 
-Input validation for amounts and required fields
+Basic knowledge of using terminal or command prompt
 
-Uses
 
-Personal budget and expense tracking
+Step 1: Clone the repository
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>/src
 
-Learning Go fundamentals (structs, slices, file handling, JSON)
+Make sure main.go is inside the src folder.
 
-Understanding CLI-based application design
+Step 2: Build the binary
 
-Practicing input validation and state management
+For Windows:
+set CGO_ENABLED=0
+set GOOS=windows
+set GOARCH=amd64
+go build -ldflags="-s -w" -o ../CLI-Expense-Manager.exe
 
-Base project for extending into larger finance systems
+
+This will create a standalone executable CLI-Expense-Manager.exe in the parent folder.
+
+The binary can run on any Windows machine without installing Go.
+
+
+Step 3: Run the program
+../CLI-Expense-Manager.exe
+
+The program will show a menu with options:
+
+Add income
+
+Add expense
+
+View balance
+
+List transactions
+
+Edit transaction
+
+Delete transaction
+
+Monthly summary
+
+Exit
+
+Enter the number corresponding to the action you want to perform.
+
+Step 4: Data Storage
+
+All transaction data is saved in a local file called budget.json.
+
+The file is automatically updated whenever you add, edit, or delete a transaction.
+
+Make sure the budget.json file stays in the same folder as the executable to preserve your data.
+
+Notes
+
+Only positive numbers are accepted for amounts.
+
+Transaction IDs are automatically assigned and used for editing or deleting transactions.
+
+Leave fields empty when editing to keep existing values unchanged.
+
+
+License
+
+This project is open-source. You can use, modify, and distribute it freely.
