@@ -264,7 +264,7 @@ func loadData() {
 
 	err = json.Unmarshal(data, &transactions)
 	if err != nil {
-		fmt.Println("Failed to load data.")
+		fmt.Println("Failed to load data.Retry again")
 		return
 	}
 
