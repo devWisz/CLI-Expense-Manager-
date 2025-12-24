@@ -9,21 +9,21 @@ This tool is lightweight, standalone, and portable, making it easy to manage you
 
 Features
 
-Add income transactions
+1. Add income transactions
 
-Add expense transactions
+2. Add expense transactions
 
-View total balance
+3. View total balance
 
-List all transactions with details (ID, type, date, amount, category, description)
+4. List all transactions with details (ID, type, date, amount, category, description)
 
-Edit existing transactions
+5. Edit existing transactions
 
-Delete transactions
+6. Delete transactions
 
-Monthly summary of income, expenses, and balance
+7. Monthly summary of income, expenses, and balance
 
-Data stored locally in budget.json
+8. Data stored locally in budget.json
 
 How to Run
 Prerequisites
